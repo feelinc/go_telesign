@@ -50,11 +50,43 @@ const (
 	// UcidUnkn is the same as OTHR.
 	UcidUnkn = "UNKN"
 
+	// PhoneTypeFixedLine name
+	PhoneTypeFixedLine = "FIXED_LINE"
+	// PhoneTypeMobile name
+	PhoneTypeMobile = "MOBILE"
+	// PhoneTypePrepaid name
+	PhoneTypePrepaid = "PREPAID"
+	// PhoneTypeTollFree name
+	PhoneTypeTollFree = "TOLL_FREE"
+	// PhoneTypeVoip name
+	PhoneTypeVoip = "VOIP"
+	// PhoneTypePager name
+	PhoneTypePager = "PAGER"
+	// PhoneTypePayphone name
+	PhoneTypePayphone = "PAYPHONE"
+	// PhoneTypeInvalid name
+	PhoneTypeInvalid = "INVALID"
+	// PhoneTypeRestrictedPremium name
+	PhoneTypeRestrictedPremium = "RESTRICTED_PREMIUM"
+	// PhoneTypePersonal name
+	PhoneTypePersonal = "PERSONAL"
+	// PhoneTypeVoicemail name
+	PhoneTypeVoicemail = "VOICEMAIL"
+	// PhoneTypeOther name
+	PhoneTypeOther = "OTHER"
+
 	// CallForwardActionBlock name
 	CallForwardActionBlock = "block"
 
 	// AccountLifecycleEventCreate name
 	AccountLifecycleEventCreate = "create"
+
+	// Active name
+	Active = "ACTIVE"
+	// Reachable name
+	Reachable = "REACHABLE"
+	// Unavailable name
+	Unavailable = "UNAVAILABLE"
 
 	defaultHTTPTimeout = 20
 	timeFormat         = time.RFC1123Z
