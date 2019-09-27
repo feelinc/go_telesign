@@ -1,0 +1,14 @@
+# Editor
+.vscode
+
+# Binary, build with `go build`
+/main
+
+# Go Modules
+/go.sum
+
+# Test binary, build with `go test -c`
+*.test
+
+# don't ignore keep files
+!.keep
