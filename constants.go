@@ -50,28 +50,52 @@ const (
 	// UcidUnkn is the same as OTHR.
 	UcidUnkn = "UNKN"
 
+	// PhoneTypeFixedLineCode number
+	PhoneTypeFixedLineCode = "1"
 	// PhoneTypeFixedLine name
 	PhoneTypeFixedLine = "FIXED_LINE"
+	// PhoneTypeMobileCode number
+	PhoneTypeMobileCode = "2"
 	// PhoneTypeMobile name
 	PhoneTypeMobile = "MOBILE"
+	// PhoneTypePrepaidCode number
+	PhoneTypePrepaidCode = "3"
 	// PhoneTypePrepaid name
 	PhoneTypePrepaid = "PREPAID"
+	// PhoneTypeTollFreeCode number
+	PhoneTypeTollFreeCode = "4"
 	// PhoneTypeTollFree name
 	PhoneTypeTollFree = "TOLL_FREE"
+	// PhoneTypeVoipCode number
+	PhoneTypeVoipCode = "5"
 	// PhoneTypeVoip name
 	PhoneTypeVoip = "VOIP"
+	// PhoneTypePagerCode number
+	PhoneTypePagerCode = "6"
 	// PhoneTypePager name
 	PhoneTypePager = "PAGER"
+	// PhoneTypePayphoneCode number
+	PhoneTypePayphoneCode = "7"
 	// PhoneTypePayphone name
 	PhoneTypePayphone = "PAYPHONE"
+	// PhoneTypeInvalidCode number
+	PhoneTypeInvalidCode = "8"
 	// PhoneTypeInvalid name
 	PhoneTypeInvalid = "INVALID"
+	// PhoneTypeRestrictedPremiumCode number
+	PhoneTypeRestrictedPremiumCode = "9"
 	// PhoneTypeRestrictedPremium name
 	PhoneTypeRestrictedPremium = "RESTRICTED_PREMIUM"
+	// PhoneTypePersonalCode number
+	PhoneTypePersonalCode = "10"
 	// PhoneTypePersonal name
 	PhoneTypePersonal = "PERSONAL"
+	// PhoneTypeVoicemailCode number
+	PhoneTypeVoicemailCode = "11"
 	// PhoneTypeVoicemail name
 	PhoneTypeVoicemail = "VOICEMAIL"
+	// PhoneTypeOtherCode number
+	PhoneTypeOtherCode = "12"
 	// PhoneTypeOther name
 	PhoneTypeOther = "OTHER"
 
