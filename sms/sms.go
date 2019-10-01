@@ -7,6 +7,8 @@ package sms
 import (
 	"encoding/json"
 	"net/http"
+	"net/url"
+	"strings"
 
 	telesign "github.com/feelinc/go_telesign"
 )
@@ -52,6 +54,7 @@ func (r Request) GetPath() string {
 func (r *Request) GetBody() string {
 	if r.body == "" {
 		r.body = telesign.StructToURLValues(r.data).Encode()
+		r.body = strings.ReplaceAll(r.body, "%2520", "%20")
 	}
 
 	return r.body
@@ -85,6 +88,11 @@ type AdditionalInfo struct {
 
 // New return new SMS request
 func New(ip string, phone string, msg string, typ string) telesign.Request {
+	// convert the spaces into "%20" first
+	// later we replace all "%2520" into "%20"
+	t := url.URL{Path: msg}
+	msg = t.String()
+
 	return &Request{
 		uri: smsURI,
 		data: RequestData{

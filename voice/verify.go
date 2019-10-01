@@ -7,6 +7,8 @@ package voice
 import (
 	"encoding/json"
 	"net/http"
+	"net/url"
+	"strings"
 
 	telesign "github.com/feelinc/go_telesign"
 )
@@ -50,6 +52,7 @@ func (r VerifyRequest) GetPath() string {
 func (r *VerifyRequest) GetBody() string {
 	if r.body == "" {
 		r.body = telesign.StructToURLValues(r.data).Encode()
+		r.body = strings.ReplaceAll(r.body, "%2520", "%20")
 	}
 
 	return r.body
@@ -123,7 +126,12 @@ type Errors struct {
 
 // NewVerify return new Verify request
 func NewVerify(ip string, phone string, ucid string, lang string, code string,
-	message string, callForwardAction string) telesign.Request {
+	msg string, callForwardAction string) telesign.Request {
+	// convert the spaces into "%20" first
+	// later we replace all "%2520" into "%20"
+	t := url.URL{Path: msg}
+	msg = t.String()
+
 	return &VerifyRequest{
 		uri: uri,
 		data: VerifyRequestData{
@@ -132,7 +140,7 @@ func NewVerify(ip string, phone string, ucid string, lang string, code string,
 			Ucid:              ucid,
 			Language:          lang,
 			VerifyCode:        code,
-			TTSMessage:        message,
+			TTSMessage:        msg,
 			CallForwardAction: callForwardAction,
 		},
 	}
