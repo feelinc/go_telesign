@@ -74,19 +74,13 @@ func (r Request) ParseResponse(statusCode int, content []byte) (telesign.Respons
 // Response returned by telesign API
 type Response struct {
 	telesign.MainResponse
-	Errors       []Errors             `json:"errors"`
+	Errors       []telesign.Error     `json:"errors"`
 	Location     LocationResponse     `json:"location"`
 	Numbering    NumberingResponse    `json:"numbering"`
 	PhoneType    PhoneTypeResponse    `json:"phone_type"`
 	Blocklisting BlocklistingResponse `json:"blocklisting"`
 	Carrier      CarrierResponse      `json:"carrier"`
 	Live         LiveResponse         `json:"live"`
-}
-
-// Errors returned by telesign API
-type Errors struct {
-	Code        int    `json:"code"`
-	Description string `json:"description"`
 }
 
 // LocationResponse returned by telesign API

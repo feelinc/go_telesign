@@ -28,6 +28,18 @@ type StatusResponse struct {
 	Description string `json:"description"`
 }
 
+// AdditionalInfo returned by telesign API
+type AdditionalInfo struct {
+	CodeEntered       string `json:"code_entered"`
+	MessagePartsCount int    `json:"message_parts_count"`
+}
+
+// Error returned by telesign API
+type Error struct {
+	Code        int    `json:"code"`
+	Description string `json:"description"`
+}
+
 // Failure return true if failure, otherwise false
 func (r MainResponse) Failure() bool {
 	return r.StatusCode != http.StatusOK && r.StatusCode != http.StatusNoContent

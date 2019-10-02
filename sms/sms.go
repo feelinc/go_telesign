@@ -77,13 +77,7 @@ func (r Request) ParseResponse(statusCode int, content []byte) (telesign.Respons
 // Response returned by telesign API
 type Response struct {
 	telesign.MainResponse
-	AdditionalInfo AdditionalInfo `json:"additional_info"`
-}
-
-// AdditionalInfo returned by telesign API
-type AdditionalInfo struct {
-	CodeEntered       string `json:"code_entered"`
-	MessagePartsCount int    `json:"message_parts_count"`
+	AdditionalInfo telesign.AdditionalInfo `json:"additional_info"`
 }
 
 // New return new SMS request

@@ -75,7 +75,7 @@ func (r VerifyRequest) ParseResponse(statusCode int, content []byte) (telesign.R
 type VerifyResponse struct {
 	telesign.MainResponse
 	SubResource     string             `json:"sub_resource"`
-	Errors          []Errors           `json:"errors"`
+	Errors          []telesign.Error   `json:"errors"`
 	Verify          VerifyDataResponse `json:"verify"`
 	ExternalID      string             `json:"external_id"`
 	SignatureString string             `json:"signature_string"`
@@ -85,12 +85,6 @@ type VerifyResponse struct {
 type VerifyDataResponse struct {
 	CodeState   string `json:"code_state"`
 	CodeEntered string `json:"code_entered"`
-}
-
-// Errors returned by telesign API
-type Errors struct {
-	Code        int    `json:"code"`
-	Description string `json:"description"`
 }
 
 // NewVerify return new Verify request
