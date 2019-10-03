@@ -107,6 +107,8 @@ const (
 
 	// Active name
 	Active = "ACTIVE"
+	// Valid name
+	Valid = "VALID"
 	// Reachable name
 	Reachable = "REACHABLE"
 	// Unavailable name
