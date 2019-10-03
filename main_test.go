@@ -89,6 +89,20 @@ func TestVoiceConf(t *testing.T) {
 	assert.IsType(t, &Voice{}, voice, "Should return Voice")
 }
 
+func TestStatus(t *testing.T) {
+	tel := New(SetEnv(EnvStandard), SetCustomerID(fakeCustomerID),
+		SetAPIKey(fakeAPIKey))
+
+	assert.IsType(t, &Status{}, tel.Status(), "Should return Status")
+}
+
+func TestStatusConf(t *testing.T) {
+	status := New().Status(SetConEnv(EnvStandard), SetConCustomerID(fakeCustomerID),
+		SetConAPIKey(fakeAPIKey))
+
+	assert.IsType(t, &Status{}, status, "Should return Status")
+}
+
 func TestStructToURLValues(t *testing.T) {
 	data := struct {
 		name string

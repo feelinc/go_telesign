@@ -58,6 +58,7 @@ type Telesign struct {
 	score      Connection
 	sms        Connection
 	voice      Connection
+	status     Connection
 }
 
 // PhoneID return PhoneID service
@@ -110,6 +111,19 @@ func (t *Telesign) Voice(options ...OptConFunc) Connection {
 		}
 	}
 	return t.voice
+}
+
+// Status return Status service
+func (t *Telesign) Status(options ...OptConFunc) Connection {
+	if t.status == nil {
+		if len(options) > 0 {
+			t.status = NewStatus(options...)
+		} else {
+			t.status = NewStatus(SetConEnv(t.env), SetConCustomerID(t.customerID),
+				SetConAPIKey(t.apiKey))
+		}
+	}
+	return t.status
 }
 
 // New return a new Telesign

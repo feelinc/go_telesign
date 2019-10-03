@@ -15,6 +15,7 @@ I hope Telesign soon will release their official Go SDK.
   - PhoneID API
   - PhoneID Live API
   - Score API
+  - Get Status API
 
 ### Example
 Check all the [TEST](https://github.com/feelinc/go_telesign/tree/master/test)
