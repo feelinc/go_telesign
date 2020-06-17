@@ -11,6 +11,7 @@ type Response interface {
 	GetStatusCode() int
 	Failure() bool
 	Message() string
+	GetReferenceID() string
 }
 
 // MainResponse returned by telesign API
@@ -53,4 +54,9 @@ func (r MainResponse) GetStatusCode() int {
 // Message return status description
 func (r MainResponse) Message() string {
 	return r.Status.Description
+}
+
+// GetReferenceID return reference_id from json response
+func (r MainResponse) GetReferenceID() string {
+	return r.ReferenceID
 }
